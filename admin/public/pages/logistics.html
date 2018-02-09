@@ -1,0 +1,59 @@
+<h1 ng-init="logis()">display</h1>
+
+ <br/>
+<h1>Product Details</h1>
+
+
+<table class="table table-bordered table-striped" >
+ <tr>
+
+  
+        <th>S no.</th> 
+    <th>User ID</th>
+     <th>Product ID</th>
+     <th>Product Image</th>
+ 
+ <th>Product price</th>
+  
+ <th>Address</th>
+  <th>Gift</th>
+ <th>Status</th>
+
+     
+ 
+ </tr>
+<tr ng-repeat="x in log">
+ <!--td>{{x._id}}</td-->
+ <td>{{$index+1}}</td>
+  
+     <td>{{x.email}}</td> 
+ <td>{{x.pid}}</td>
+    <td> <img ng-src="{{x.img}}" width="150px" height="150px" alt="Image not found"></td> 
+     <td>{{x.price}}</td> 
+          <td>{{x.address}}</td>
+		   <td>{{x.gift}}</td>
+        <td> {{status[x.status]}} <br>
+		
+                               
+             
+                <select ng-model="myVar">
+                        <option  value="ordered">Ordered</option>
+                        <option   value="packed">Packed</option>
+                        <option  value="shipped">Shipped</option>
+                        <option  value="delivered">Delivered</option>
+                      </select>
+            <!--<select ng-model="x.pstatus">
+                <option value="{{$index}}" ng-repeat="x in status">{{x}}</option>
+
+            </select-->
+     <button type="button" ng-click="update(myVar,x.pid)" > Update </button>
+     <button type="button" ng-click="editproduct(myVar)"> Edit product </button>
+     <button type="button" ng-click="editaddress(myVar)"> Edit address </button>
+
+                    
+                </td>
+    </tr>
+</table>
+<div ng-if="users.length==0">
+ No record found !!
+</div>
