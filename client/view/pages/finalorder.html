@@ -1,0 +1,53 @@
+<h3 ng-init="cart()">------------FInal----------------------</h3>
+
+
+<div class="container-fluid">
+<table class="table table-bordered table-striped" >
+ <tr >
+ <th>SNo.</th>
+ 
+  <th>Product ID</th>
+ <th>Image</th>
+  <th>price</th>
+
+ 
+  <th>your product will be deliverd to this address</th>
+  <th>status</th>
+  <th>Gift wrapped</th>
+
+
+ 
+ 
+  </tr>
+ <tr ng-repeat="x in orders ">
+ 
+ <td><h5>{{$index+1}}</h5></td>
+
+   <td ><h5>{{x.pid}}</h5></td>
+ <td> <img ng-src="{{x.img}}" width="150px" height="100px" alt="Image not found" ></td> 
+ <td ><h5>{{x.price}}</h5></td> 
+ <td ><h5>{{x.address}}</h5></td>
+  <td > <h5 ng-model="myVar" style="color:green"> {{x.status}}</h5></td>
+  <td > <h5  style="color:red"> {{x.gift}}</h5></td>
+<td> <button type="button" class="btn btn-default" ng-click="editproduct(x.status)"> Edit product </button>
+<hr>
+     <button type="button" class="btn btn-default" ng-click="editaddress(x.status)"> Edit address </button> </td>
+
+
+
+ 
+</tr>
+</table>
+</div>
+
+<div>                                   
+<a href="#"> 
+ <button type="button" class="btn btn-success">proceed to pay</button></a> </div>
+</div>
+
+<!--*************************************************-->
+
+<div ng-if="orders.length==0">
+ <h3>NO items  !!!</h3>
+ 
+</div>

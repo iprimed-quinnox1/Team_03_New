@@ -1,0 +1,114 @@
+
+
+<h1 ng-init="myadd()">my address</h1>
+<!--
+ <button type="submit" class="btn btn-success" ng-click="myadd()" class="btn btn-default">cart</button>
+ <br/>
+<table class="table table-bordered table-striped" >
+ <tr>
+ <th>SNo.</th>
+  <th>name</th>
+ <th>email</th>
+  <th>phone</th>
+ <th>address</th>
+  
+ </tr>
+ <tr ng-repeat="user in cart">
+ 
+ 
+ <td>{{$index+1}}</td>
+  
+    <td>{{user.name}}</td>
+	 <td>{{user.email}}</td>
+	  <td>{{user.phone}}</td>
+	  <td>{{user.add1}}</td>
+	 
+  
+ </tr>
+</table>
+-->
+<div  class="panel panel-info">
+<div class="panel-body">
+<h5> Default address</h5>
+<table>
+
+
+<tr><td ng-repeat="user in cart">{{user.deafault}}</td></tr>
+<tr><td><button type="submit" class="btn btn-success" ng-click="deleteadd(user.email)" class="btn btn-default" onClick="location.reload()">delete</button></td></tr>
+
+</table>
+</div>
+
+</div>
+
+
+
+<div ng-repeat="user in cart" class="panel panel-info">
+<div class="panel-body">
+<table>
+<tr><th>Address {{$index+1}}</th></tr>
+<tr><td>{{user.name}}</td></tr>
+<tr><td>{{user.email}}</td></tr>
+  </tr><td>{{user.phone}}</td></tr>
+<tr><td>{{user.address}}</td></tr>
+<tr><td><button type="submit" class="btn btn-success" ng-click="deleteadd(user.email)" onClick="location.reload()" class="btn btn-default">delete</button></td>
+<td><button type="submit" class="btn btn-danger" class="btn btn-default" ng-click="default1(user.address)" onClick="location.reload()">Make this address as default</button></td></tr>
+</table>
+
+</div>
+
+</div>
+<!-- new address -->
+
+
+<div ng-if="users.length==0">
+ No record found !!
+</div>
+
+<!--sg show-->
+ <input type="button" class="btn btn-primary" value="Add new address" ng-click="ShowHide()" />
+        <br />
+        <br />
+        <div ng-show = "IsVisible">
+		<div class="well" class="form-horizontal">
+
+
+
+<div class="container">
+  <h2>Add new address</h2>
+  <form class="form-horizontal" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" ng-model="name" class="form-control" id="email" placeholder="Enter name" name="email" style="width:250px">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Email:</label>
+      <div class="col-sm-10">          
+        <input type="email" ng-model="email" class="form-control" id="email" placeholder="Enter email" name="email" style="width:250px">
+      </div>
+    </div>
+	    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">phone number:</label>
+      <div class="col-sm-10">          
+        <input type="text" ng-model="phnum" class="form-control" id="ph" placeholder="Enter phnum" name="phnum" style="width:250px">
+      </div>
+    </div>
+	    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Address :</label>
+      <div class="col-sm-10">          
+        <input type="text" ng-model="address" class="form-control" id="address" placeholder="Enter address" name="address" style="width:250px">
+      </div>
+    </div>
+   
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success" ng-click="addnew()" onClick="location.reload()" class="btn btn-default">ADD</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+		
+		</div>

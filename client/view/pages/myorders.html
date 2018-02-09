@@ -1,0 +1,75 @@
+<!--
+ <button type="submit" class="btn btn-success" ng-click="cart()" class="btn btn-default">cart</button>
+ <br/>-->
+<h3 ng-init="cart()">-----------------My orders----------------------</h3>
+
+
+<div class="container-fluid">
+<table class="table table-bordered table-striped" >
+ <tr >
+ <th>SNo.</th>
+  <th>Product ID</th>
+ <th>Image</th>
+ <th> Product Name</th>
+  <th>price</th>
+   <th>Gift Wrapping</th>
+  <th>selected address</th>
+
+
+ 
+ 
+  </tr>
+ <tr ng-repeat="x in cart" >
+ 
+ <td><h5>{{$index+1}}</h5></td>
+ 
+   <td ><h5>{{x.pid}}</h5></td>
+ <td> <img ng-src="{{x.img}}" width="150px" height="100px" alt="Image not found" ></td>  
+ <td ><h5>{{x.name}}</h5></td>
+ <td ><h5>{{x.price}}</h5></td>
+ <td><button type="button" class="btn btn-success" ng-click="giftWrap(x.pid)">Gift Wrap</button></td>
+<!-- <td  ng-repeat="user in address" ng-init="placeAdd(x.pid,user.deafault)">{{user.deafault}}</td>-->
+  
+  <td><h5>{{x.address}}</h5></td>
+  <td>
+<input type="button" class="btn btn-primary" value="add new address" ng-click="ShowHide()" />
+ </td>
+
+<td width="25%">
+        <select ng-model="myVar" >
+        
+        <option value="{{user.address}}" ng-repeat="user in address">{{user.address}}<hr></option>
+        </select>
+		 <button type="button" ng-click="update(myVar,x.pid)" onClick="location.reload()"> Update </button>
+ </td>
+ 
+  <td>        
+  <div ng-show = "IsVisible">
+ <textarea rows="4" cols="50" placeholder="Enter new address"  ng-model="onetime"></textarea>
+ <pre>
+<input type="button" class="btn btn-default" value="one time"  ng-click="oneTime(x.pid,onetime)" onClick="location.reload()"/>
+<input type="button" class="btn btn-default" value="Make it permanent"  ng-click="permanentAdd(x.pid,onetime,x.email)" onClick="location.reload()"/></pre>
+</div>
+ </td>
+ <td>
+  <button type="button" class="btn btn-success" ng-click="placeOrder(x)">PLACE OORDER</button>
+  </td>
+ 
+
+
+ 
+</tr>
+</table>
+</div>
+<div >
+  <a href="#track"> <button type="button" class="btn btn-success" >View my Orders</button></a>
+<a> </a>
+ </div>
+
+
+<!--*************************************************-->
+
+<div ng-if="cart.length==0">
+ <h3>NO items in your orders !!!</h3>
+ 
+</div>
