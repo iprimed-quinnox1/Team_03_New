@@ -1,0 +1,8 @@
+netgloo\models\Gender.class
+netgloo\controllers\MainController.class
+netgloo\controllers\UserController.class
+netgloo\models\UserProfileRepository.class
+netgloo\models\UserProfile.class
+netgloo\models\UserDao.class
+netgloo\models\User.class
+netgloo\Application.class
