@@ -19,11 +19,33 @@
 
 </head>
 <body ng-app="idApplication" ng-controller="idController" >
-
+	
+	<div>
 	<form method="post" id= "myId">
         Name : <input type=type="number" number-converter ng-model="id" />
         <input type="submit" ng-click="fetchTheId(id)"/>
-    </form>
+     </form>
+    </div>
+    <div>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody >
+    
+				  <tr ng-repeat="x in userData" >
+				    <td>{{ x.id }}</td>
+				    <td>{{ x.email }}</td>
+				    <td>{{ x.name }}</td>
+				  </tr>
+		  	</tbody>
+	</table>
+   </div>
+    
 
 </body>
 </html>

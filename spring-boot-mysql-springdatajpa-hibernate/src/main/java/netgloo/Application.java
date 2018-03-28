@@ -21,6 +21,9 @@ public class Application {
     private UserProfileRepository userProfileRepository;
 
   public static void main(String[] args) {
+	  
+	  
+	  
     SpringApplication.run(Application.class, args);
   }
   
@@ -28,7 +31,7 @@ public class Application {
   public void run(String... args) throws Exception {
       // Clean up database tables
       userProfileRepository.deleteAllInBatch();
-      userRepository.deleteAllInBatch();
+     // userRepository.deleteAllInBatch();
 
       //=========================================
 
@@ -51,8 +54,8 @@ public class Application {
       userProfile.setUser(user);
 
       // Save Parent Reference (which will save the child as well)
-  //    userRepository.save(User);
 
+       userRepository.save(userProfile);
       //=========================================
   }
 }

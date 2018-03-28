@@ -1,8 +1,8 @@
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\User.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\Application.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\controllers\UserController.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\controllers\MainController.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserProfile.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserDao.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserProfileRepository.java
-C:\Users\VarunP\Desktop\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\Gender.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserDao.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\Application.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\controllers\UserController.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\Gender.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\User.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserProfileRepository.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\models\UserProfile.java
+C:\Users\Varun\Desktop\Springs\spring-boot-mysq\spring-boot-mysql-springdatajpa-hibernate\src\main\java\netgloo\controllers\MainController.java

@@ -15,9 +15,9 @@ $scope.fetchTheId = function(x){
 	//var id = $scope.x;
 	//var jsonId = [JSON.parse(x)];
 	$scope.y = parseInt($scope.x);
-	$http.get("http://localhost:8080//getbyid/y").then(function(response) {
+	$http.get("http://localhost:8080//getbyid/1" ).then(function(response) {
 
-		//$scope.cart = response.data;
+		$scope.userData = response.data;
 		 console.log(response.data);
 
 	});

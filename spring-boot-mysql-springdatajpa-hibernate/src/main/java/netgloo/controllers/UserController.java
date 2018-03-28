@@ -1,8 +1,12 @@
 package netgloo.controllers;
 
+import netgloo.models.Gender;
 import netgloo.models.User;
 import netgloo.models.UserDao;
+import netgloo.models.UserProfile;
+import netgloo.models.UserProfileRepository;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,6 +50,42 @@ public class UserController {
     return "User succesfully created! (id = " + user.getId() + ")";
   }
   
+  @RequestMapping("/try")
+  @ResponseBody
+  public static void run(String... args) throws Exception {
+      // Clean up database tables
+      userProfileRepository.deleteAllInBatch();
+     // userRepository.deleteAllInBatch();
+
+      //=========================================
+
+      // Create a User instance
+      User user = new User();
+
+      Calendar dateOfBirth = Calendar.getInstance();
+      dateOfBirth.set(1992, 7, 21);
+
+      // Create a UserProfile instance
+      UserProfile userProfile = new UserProfile("+91-8197882053", Gender.MALE, dateOfBirth.getTime(),
+              "747", "2nd Cross", "Golf View Road, Kodihalli", "Bangalore",
+              "Karnataka", "India", "560008");
+
+
+      // Set child reference(userProfile) in parent entity(user)
+      user.setUserProfile(userProfile);
+
+      // Set parent reference(user) in child entity(userProfile)
+      userProfile.setUser(user);
+
+      // Save Parent Reference (which will save the child as well)
+
+       userRepository.save(userProfile);
+      //=========================================
+  }
+
+  
+  
+  
   /**
    * /delete  --> Delete the user having the passed id.
    * 
@@ -54,7 +94,7 @@ public class UserController {
    */
   @RequestMapping("/delete")
   @ResponseBody
-  public String delete(int id) {
+  public String delete(long id) {
     try {
       User user = new User(id);
       userDao.delete(user);
@@ -94,11 +134,11 @@ public class UserController {
    * @param name The new name.
    * @return A string describing if the user is succesfully updated or not.
    */
-  /*@RequestMapping("/update")
+  @RequestMapping("/update")
   @ResponseBody
-  public String updateUser(int id, String email, String name) {
+  public String updateUser(long id, String email, String name) {
     try {
-      User user = userDao.getOne((long) id);
+      User user = userDao.getOne(id);
       user.setEmail(email);
       user.setName(name);
       userDao.save(user);
@@ -108,7 +148,7 @@ public class UserController {
     }
     return "User succesfully updated!";
   }
-*/
+
   @GetMapping("/getallusers")
   @ResponseBody
   public List<User> getallusers() {
@@ -117,8 +157,8 @@ public class UserController {
   }
   @GetMapping("/getbyid/{id}")
   @ResponseBody
-  public Optional<User> getallusers(@PathVariable("id") int id ) {
-	  return userDao.findById((long) id);
+  public Optional<User> getallusers(@PathVariable("id") Long id ) {
+	  return userDao.findById(id);
 	  
   }
   
@@ -131,4 +171,19 @@ public class UserController {
   @Autowired
   private UserDao userDao;
   
-} // class UserController
+	@Autowired
+    private static UserProfileRepository userRepository;
+
+    @Autowired
+    private static UserProfileRepository userProfileRepository;
+
+  
+    
+  
+}
+  
+  
+  
+  
+  
+ // class UserController
